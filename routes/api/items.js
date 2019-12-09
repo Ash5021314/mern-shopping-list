@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
   })
   console.log('abc', newItem)
   const item = await newItem.save()
-  await res.json(item)
+  res.json(item)
 })
 
 
