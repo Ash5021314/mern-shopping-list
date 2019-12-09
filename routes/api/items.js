@@ -20,8 +20,9 @@ router.post('/', async (req, res) => {
   const newItem = new Item({
     name: req.body.name
   })
-  console.log('abc', newItem)
+  console.log('before save', newItem)
   const item = await newItem.save()
+  console.log('after save', newItem)
   res.json(item)
 })
 
