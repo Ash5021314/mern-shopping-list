@@ -21,8 +21,8 @@ router.post('/', async (req, res) => {
     name: req.body.name
   })
   console.log('abc', newItem)
-  item = await newItem.save()
-  res.json(item)
+  const item = await newItem.save()
+  await res.json(item)
 })
 
 
