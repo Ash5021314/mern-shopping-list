@@ -6,7 +6,7 @@ const path = require('path')
 const items = require('./routes/api/items')
 const app = express()
 
-// Bodyparser Middleware
+// BodyParser Middleware
 
 app.use(bodyParser.json())
 
@@ -17,7 +17,6 @@ const db = require('./config/keys').mongoURI
 //connect to Mongo
 mongoose.connect(db, {useNewUrlParser: true})
   .then(() => {
-
     console.log(db)
     console.log('mongodb connected...')
   })

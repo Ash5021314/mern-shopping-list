@@ -16,12 +16,13 @@ router.get('/', (req, res) => {
 // @route POST api/item
 // @desc Create A Item
 // @access Public
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const newItem = new Item({
     name: req.body.name
   })
   console.log('abc', newItem)
-  newItem.save().then(item => res.json(item))
+  item = await newItem.save()
+  res.json(item)
 })
 
 
