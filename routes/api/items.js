@@ -7,8 +7,8 @@ const Item = require('../../models/Item')
 // @route Get api/item
 // @desc Get All Items
 // @access Public
-router.get('/', (req, res) => {
-  Item.find()
+router.get('/', async (req, res) => {
+  await Item.find()
     .sort({date: -1})
     .then(items => res.json(items))
 })
