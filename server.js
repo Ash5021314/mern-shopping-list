@@ -17,7 +17,6 @@ const db = require('./config/keys').mongoURI
 //connect to Mongo
 mongoose.connect(db, {useNewUrlParser: true})
   .then(() => {
-    console.log(db)
     console.log('mongodb connected...')
   })
   .catch((err => console.log(err)))
@@ -32,5 +31,5 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
 }
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 'mongodb://127.0.0.1:27017/test'
 app.listen(port, () => console.log(`Server started on port ${port}`))
